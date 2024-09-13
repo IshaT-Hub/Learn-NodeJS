@@ -10,7 +10,7 @@ app.get("/", (req,res)=>{
 });
 
 app.get("/About", (req,res)=>{
-    return res.send("About PAGE" + 'Hey' + req.query.Name);
+    return res.send("About PAGE" + 'Hello ${req.query.name}');
 });
 
 
