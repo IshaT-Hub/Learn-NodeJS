@@ -12,3 +12,4 @@ app.get("/About", (req,res)=>{
 });
 
 app.listen(8000, () => {console.log("SERVER STARTED")});
+//listening on port 8000
