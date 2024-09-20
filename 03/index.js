@@ -8,8 +8,11 @@ const PORT = 8000;
 
 //middleware - plugin of name urlencoded || whenever we recieve form data it will put it in body
 app.use(express.urlencoded({extended:false})); 
-
 // urlencoded ==> it did was, fetch data -> made its JS object -> Put it in req body
+app.use((req, res, next)=>{
+ console.log("Middleware started");
+ next();
+})
 
 //Route
 
