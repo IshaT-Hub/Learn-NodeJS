@@ -12,6 +12,7 @@ app.use((req, res, next)=>{
  next();  //to forward the request
 });
 
+//abcd
 app.use((req, res, next)=>{
     console.log("Middleware started22");
     next();  //to forward the request
