@@ -1,20 +1,21 @@
 const express = require('express');
 const users = require('./MOCK_DATA.json');
 const fs = require('fs');
-
 const app = express();  //instance
-
 const PORT = 8000;
 
 //middleware - plugin of name urlencoded || whenever we recieve form data it will put it in body
-app.use(express.urlencoded({extended:false})); 
+app.use(express.urlencoded({extended:false}));   //built in middleware
 // urlencoded ==> it did was, fetch data -> made its JS object -> Put it in req body
 app.use((req, res, next)=>{
  console.log("Middleware started");
- next();
-})
+ next();  //to forward the request
+});
 
-//Route
+app.use((req, res, next)=>{
+    console.log("Middleware started22");
+    next();  //to forward the request
+   })
 
 app.route('/api/users/:id').get((req, res) => {
     const id = Number(req.params.id);
