@@ -17,7 +17,13 @@ app.use((req, res, next)=>{
     next();  //to forward the request
    })
 
-app.route('/api/users/:id').get((req, res) => {
+app.get('/api/users',(req,res)=>{
+    res.setHeader("X-myName", "ishu"); // X represents that it is a custom header
+    return res.json(users);
+})
+
+app
+    .route('/api/users/:id').get((req, res) => {
     const id = Number(req.params.id);
     const user = users.find((user) => user.id === id);
     return res.json(user);})
